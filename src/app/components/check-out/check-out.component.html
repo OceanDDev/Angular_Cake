@@ -1,0 +1,55 @@
+<form [formGroup]="order" (ngSubmit)="orderSubmit()" class="pay grid-2 bb">
+  <!-- Thông tin của người mua -->
+  <div class="checkout-left">
+    
+    <h1>Thông tin người đặt hàng</h1>
+<!-- Form nhập thông tin của người mua -->
+<div >
+  <div class="form">
+    <input title="Điền họ tên" class="input" placeholder="Họ tên"   [value]="user?  user.name : '' " type="text">
+    <span class="input-border"></span>
+  </div>
+
+  <div class=" mt-6 grid-60-30-gap">
+    <div class="form">
+      <input class="input" placeholder="Email" name="email" [value]="user?  user.email: '' " required="" type="text">
+      <span class="input-border"></span>
+    </div>
+    <div class="form ">
+      <input class="input" placeholder="Số điện thoại" name="phone"[value]=" user? user.phone : '' " required="" type="number">
+      <span class="input-border"></span>
+    </div>
+  </div>
+
+  <div class="form mt-6">
+    <input class="input" placeholder="Địa chỉ" formControlName="address" [value]="user? user.address : '' " name="diachi" required="" type="text">
+    <span class="input-border"></span>
+  </div>
+
+</div>
+
+    <app-address></app-address>
+  </div>
+  <!-- Phần giỏ hàng -->
+  <div class="checkout-right bl">
+    <h1>Giỏ hàng</h1>
+    <div id="checkout">
+      <app-item></app-item>
+    </div>
+    <!-- Phần sản phẩm -->
+    <!-- Phần tính tổng đơn hàng -->
+    <div class="tong grid-2">
+      <span>Tổng</span>
+      <span>{{ Summary() }}</span>
+    </div>
+    <div *ngIf="!isLogin" class="w-full flex-center">
+      <a [routerLink]="['/login']" class="add mt-6 btn-primary" style="width: fit-content">
+        Đăng nhập để mua hàng
+      </a>
+    </div>
+    <button type="submit"  *ngIf="isLogin && Summary()!=0" class="add mt-6 btn-primary" style="width: fit-content; margin: 0 auto">
+      Đặt hàng
+    </button>
+    <button type="button" (click)="vl()">nhaaps vo</button>
+  </div>
+</form>
