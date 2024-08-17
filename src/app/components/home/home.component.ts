@@ -11,7 +11,7 @@ export class HomeComponent  {
   productHot: Product[]  = [];
   productService: ProductService = inject(ProductService)
   constructor() {
-    this.productService.getListProducts("http://localhost:3000/products/hot").then(data => {
+    this.productService.getListProducts("https://angular-cake.vercel.app/products/hot").then(data => {
       this.productHot = data
       console.log(this.productHot);
       

@@ -24,7 +24,7 @@ export class ProductListComponent {
 }
 
 loadProducts(): void {
-  this.productService.getProduct(`http://localhost:3000/products?page=${this.currentPage}&limit=${this.selectedLimit}`).then((data: any) => {
+  this.productService.getProduct(`https://angular-cake.vercel.app/products?page=${this.currentPage}&limit=${this.selectedLimit}`).then((data: any) => {
     this.product = data.result;
     this.currentPage = data.currentPage
    this.countPage = data.countPage;
