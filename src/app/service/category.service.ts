@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class CategoryService {
-  url = 'http://localhost:3000'
+  url = 'https://server-cake-8uhd.vercel.app/'
   constructor(private httpClient: HttpClient) { }
   
   getAll() {

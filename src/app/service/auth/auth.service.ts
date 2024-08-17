@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 export class AuthService {
 
-public API_URL  = "http://localhost:3000/"
+public API_URL  = "https://server-cake-8uhd.vercel.app/"
 public  httpOption = {
   headers: {
     'Content-Type': 'application/json',

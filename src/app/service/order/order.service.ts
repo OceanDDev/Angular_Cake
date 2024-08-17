@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
-  public API_URL = 'http://localhost:3000/';
+  public API_URL = 'https://server-cake-8uhd.vercel.app/';
 
   constructor(private http: HttpClient) { }
 

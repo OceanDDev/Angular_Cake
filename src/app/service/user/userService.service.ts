@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class UserService {
-private api = "http://localhost:3000/"
+private api = "https://server-cake-8uhd.vercel.app/"
 
 constructor(private http: HttpClient, private cookie: CookieService) { }
 
