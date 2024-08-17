@@ -24,10 +24,10 @@ export class ProductListComponent {
 }
 
 loadProducts(): void {
-  this.productService.getProduct(`https://angular-cake.vercel.app/products?page=${this.currentPage}&limit=${this.selectedLimit}`).then((data: any) => {
+  this.productService.getProduct(`https://server-cake-8uhd.vercel.app/products?page=${this.currentPage}&limit=${this.selectedLimit}`).then((data: any) => {
     this.product = data.result;
-    this.currentPage = data.currentPage
-   this.countPage = data.countPage;
+    this.currentPage = data.panigation.currentPage;
+   this.countPage = data.panigation.countPage;
 
   }).catch(error => {
     console.error("Failed to load products", error);

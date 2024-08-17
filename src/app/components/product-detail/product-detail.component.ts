@@ -17,8 +17,8 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.productService.getProductDetails("https://angular-cake.vercel.app/products/detail/"+id).then((data:any)=> {
-    this.productDetail = data
+    this.productService.getProductDetails("https://server-cake-8uhd.vercel.app/products/detail/"+id).then((data:any)=> {
+    this.productDetail = data.result
     console.log( this.productDetail);
     
     
